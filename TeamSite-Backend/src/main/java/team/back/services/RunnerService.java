@@ -24,6 +24,7 @@ public class RunnerService {
         runnerShow.setFirstName(runner.getFirstName());
         runnerShow.setSecondName(runner.getSecondName());
         runnerShow.setSurname(runner.getSurname());
+        runnerShow.setPicture(runner.getPicture());
         runner.setRunnerShow(runnerShow);
         runnerRepo.save(runner);
     }
