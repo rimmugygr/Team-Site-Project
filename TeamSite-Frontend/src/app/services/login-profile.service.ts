@@ -14,7 +14,7 @@ export class LoginProfileService {
 
   constructor(private auth: AuthSPAService, private runnerService: RunnerService) { }
 
-  public getProfile2(): Observable<any> {
+  public getProfile(): Observable<any> {
     this.initProfile();
     let profile: Observable<any>;
     this.auth.userProfile$.subscribe(

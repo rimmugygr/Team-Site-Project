@@ -58,13 +58,13 @@ public class RunnerService {
     public void updateRunner(Runner runner) {
         if(runnerRepo.existsById(runner.getId())){
             Runner runnerInBase = runnerRepo.getOne(runner.getId());
-            if (runner.getFirstName()!=null) {
+            if (runner.getFirstName()!=null && !runner.getFirstName().equals("")) {
                 runnerInBase.setFirstName(runner.getFirstName());
             }
-            if (runner.getSecondName()!=null) {
+            if (runner.getSecondName()!=null && !runner.getSecondName().equals("")) {
                 runnerInBase.setSecondName(runner.getSecondName());
             }
-            if (runner.getSurname()!=null) {
+            if (runner.getSurname()!=null && !runner.getSurname().equals("")) {
                 runnerInBase.setSurname(runner.getSurname());
             }
             if (runner.getBirdDate()!=null) {

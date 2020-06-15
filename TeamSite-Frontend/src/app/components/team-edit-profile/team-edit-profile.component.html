@@ -1,23 +1,23 @@
 <div class="container">
-  <form [formGroup]="newMemberForm" (ngSubmit)="submitRegistration()" novalidate>
+  <form [formGroup]="editProfileForm" (ngSubmit)="submitEditProfile()" *ngIf="this.editProfileForm">
     <div *ngIf="validMessage != ''">
       <h3 class="has-info">{{validMessage}}</h3>
     </div>
     <div class="form-group">
       <label>First Name</label>
-      <input type="text" class="form-control" formControlName="firstName" required autofocus/>
+      <input type="text" class="form-control" formControlName="firstName"/>
     </div>
     <div class="form-group">
       <label>Second Name</label>
-      <input type="text" class="form-control" formControlName="secondName" required/>
+      <input type="text" class="form-control" formControlName="secondName" >
     </div>
     <div class="form-group">
       <label>Surname</label>
-      <input type="text" class="form-control" formControlName="surname" required/>
+      <input type="text" class="form-control" formControlName="surname" />
     </div>
     <div class="form-group">
       <label>Gender</label>
-      <select class="form-control" formControlName="gender" required>
+      <select class="form-control" formControlName="gender" >
         <option value="">Please select gender</option>
         <option *ngFor="let g of gender"
                 [value]="g">
@@ -26,16 +26,16 @@
       </select>
     </div>
     <div class="form-group">
-      <label>birdDate</label>
-      <input type="text" class="form-control" formControlName="birdDate" required/>
+      <label>Bird Date</label>
+      <input type="text" class="form-control" formControlName="birdDate"/>
     </div>
     <div class="form-group">
-      <label>description</label>
-      <input type="text" class="form-control" formControlName="description" required/>
+      <label>Description</label>
+      <input type="text" class="form-control" formControlName="description" />
     </div>
     <div class="form-group">
       <label>Email</label>
-      <input type="email" class="form-control" formControlName="email" required/>
+      <input type="email" class="form-control" formControlName="email" />
     </div>
 
     <button type="submit" class="btn btn-primary" >Submit</button>

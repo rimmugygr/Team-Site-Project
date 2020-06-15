@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { MembersComponent } from './components/members/members.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { TeamNewMemberComponent } from './components/team-new-member/team-new-member.component';
+import { TeamEditProfileComponent } from './components/team-edit-profile/team-edit-profile.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TeamViewMemberComponent } from './components/team-view-member/team-view-member.component';
 import { HomeComponent } from './components/home/home.component';
@@ -26,7 +26,7 @@ import { TeamRaceAddComponent } from './components/team-race-add/team-race-add.c
   declarations: [
     AppComponent,
     MembersComponent,
-    TeamNewMemberComponent,
+    TeamEditProfileComponent,
     TeamViewMemberComponent,
     HomeComponent,
     WhenDirective,

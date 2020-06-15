@@ -14,7 +14,7 @@ export class TeamHomeComponent implements OnInit {
   constructor(private runnerService: RunnerService, public loginProfile: LoginProfileService) { }
 
   ngOnInit(): void {
-    this.loginProfile.getProfile2().subscribe(
+    this.loginProfile.getProfile().subscribe(
       data => this.profile = data,
       error => console.log(error)
     );

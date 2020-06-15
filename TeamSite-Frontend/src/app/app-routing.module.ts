@@ -10,7 +10,7 @@ import {AuthGuard} from './services/auth.guard';
 import {TeamPostAddComponent} from './components/team-post-add/team-post-add.component';
 import {TeamRaceComponent} from './components/team-race/team-race.component';
 import {TeamRaceAddComponent} from './components/team-race-add/team-race-add.component';
-import {TeamNewMemberComponent} from './components/team-new-member/team-new-member.component';
+import {TeamEditProfileComponent} from './components/team-edit-profile/team-edit-profile.component';
 
 const routes: Routes = [
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
   },
   {
     path: 'members/new',
-    component: TeamNewMemberComponent
+    component: TeamEditProfileComponent
   },
   {
     path: 'members/view/:id',
