@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {RunnerService} from '../../services/runner.service';
+import {RunnerService} from '../../../services/runner.service';
 import {FormGroup, FormControl, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {AuthSPAService} from '../../services/auth-spa.service';
-import {LoginProfileService} from '../../services/login-profile.service';
-import {IRunner} from '../IRunner';
+import {AuthSPAService} from '../../../services/auth-spa.service';
+import {LoginProfileService} from '../../../services/login-profile.service';
+import {IRunner} from '../../../model/IRunner';
 
 @Component({
   selector: 'app-team-new-member',

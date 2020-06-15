@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {IPost} from '../IPost';
-import {PostService} from '../../services/post.service';
-import {AuthSPAService} from '../../services/auth-spa.service';
+import {IPost} from '../../../model/IPost';
+import {PostService} from '../../../services/post.service';
+import {AuthSPAService} from '../../../services/auth-spa.service';
 
 @Component({
   selector: 'app-post-view',

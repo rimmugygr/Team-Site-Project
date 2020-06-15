@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RunnerService} from '../../services/runner.service';
+import {RunnerService} from '../../../services/runner.service';
 import {ActivatedRoute} from '@angular/router';
-import {IRunner} from '../IRunner';
+import {IRunner} from '../../../model/IRunner';
 
 @Component({
   selector: 'app-team-view-member',

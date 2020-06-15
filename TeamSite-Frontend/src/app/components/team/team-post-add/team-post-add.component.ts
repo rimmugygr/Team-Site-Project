@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {PostService} from '../../services/post.service';
+import {PostService} from '../../../services/post.service';
 import {Router, RouterLink} from '@angular/router';
 
 @Component({

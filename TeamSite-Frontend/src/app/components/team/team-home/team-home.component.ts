@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthSPAService} from '../../services/auth-spa.service';
-import {RunnerService} from '../../services/runner.service';
-import {LoginProfileService} from '../../services/login-profile.service';
-import {IRunner} from '../IRunner';
+import {AuthSPAService} from '../../../services/auth-spa.service';
+import {RunnerService} from '../../../services/runner.service';
+import {LoginProfileService} from '../../../services/login-profile.service';
+import {IRunner} from '../../../model/IRunner';
 
 @Component({
   selector: 'app-team-home',

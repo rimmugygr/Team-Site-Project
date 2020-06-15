@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MembersComponent} from './components/members/members.component';
-import {TeamViewMemberComponent} from './components/team-view-member/team-view-member.component';
-import {HomeComponent} from './components/home/home.component';
-import {PostViewComponent} from './components/post-view/post-view.component';
-import {CallbackComponent} from './components/callback/callback.component';
-import {TeamHomeComponent} from './components/team-home/team-home.component';
+import {MembersComponent} from './components/all/members/members.component';
+import {TeamViewMemberComponent} from './components/team/team-view-member/team-view-member.component';
+import {HomeComponent} from './components/all/home/home.component';
+import {PostViewComponent} from './components/all/post-view/post-view.component';
+import {CallbackComponent} from './components/team/callback/callback.component';
+import {TeamHomeComponent} from './components/team/team-home/team-home.component';
 import {AuthGuard} from './services/auth.guard';
-import {TeamPostAddComponent} from './components/team-post-add/team-post-add.component';
-import {TeamRaceComponent} from './components/team-race/team-race.component';
-import {TeamRaceAddComponent} from './components/team-race-add/team-race-add.component';
-import {TeamEditProfileComponent} from './components/team-edit-profile/team-edit-profile.component';
+import {TeamPostAddComponent} from './components/team/team-post-add/team-post-add.component';
+import {TeamRaceComponent} from './components/team/team-race/team-race.component';
+import {TeamRaceAddComponent} from './components/team/team-race-add/team-race-add.component';
+import {TeamEditProfileComponent} from './components/team/team-edit-profile/team-edit-profile.component';
 
 const routes: Routes = [
   {

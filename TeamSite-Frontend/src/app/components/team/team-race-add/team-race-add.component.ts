@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {RaceService} from '../../services/race.service';
+import {RaceService} from '../../../services/race.service';
 
 @Component({
   selector: 'app-team-race-add',

@@ -8,14 +8,23 @@ import java.io.Serializable;
 
 @Entity
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
-public class RunnerShow implements Serializable {
+public class RunnerShow {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String firstName;
     private String secondName;
     private String surname;
+    private String picture;
     private String description;
+
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
 
     public Long getId() {
         return id;

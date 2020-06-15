@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpRequest} from '@angular/common/http';
-import {IRunner} from '../components/IRunner';
+import {IRunner} from '../model/IRunner';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +26,6 @@ export class RunnerService {
   editProfile(profileRunner: IRunner) {
     return this.httpClient.patch(`/server/runner`, profileRunner);
   }
+
+
 }

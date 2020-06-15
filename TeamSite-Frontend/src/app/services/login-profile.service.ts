@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import {IRunner} from '../components/IRunner';
+import {IRunner} from '../model/IRunner';
 import {AuthSPAService} from './auth-spa.service';
 import {RunnerService} from './runner.service';
 import {Observable, Subscription} from 'rxjs';
-import {Profile} from './profile';
+import {RunnerProfile} from '../model/runner-profile';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginProfileService {
   profileInit = false;
-  profile = new Profile();
+  profile = new RunnerProfile();
 
   constructor(private auth: AuthSPAService, private runnerService: RunnerService) { }
 
@@ -33,7 +33,7 @@ export class LoginProfileService {
         profileId = data.sub.replace(`facebook|`, '');
         this.runnerService.getRunner(profileId).subscribe(
           data => {
-            this.profile = (data as Profile);
+            this.profile = (data as RunnerProfile);
           },
           error => console.error(error),
           () => {

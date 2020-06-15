@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {RunnerService} from '../../services/runner.service';
-import {IRunner} from '../IRunner';
-import {RaceService} from '../../services/race.service';
-import {IRace} from '../IRace';
-import {IStart} from '../IStart';
+import {RunnerService} from '../../../services/runner.service';
+import {IRunner} from '../../../model/IRunner';
+import {RaceService} from '../../../services/race.service';
+import {IRace} from '../../../model/IRace';
+import {IStart} from '../../../model/IStart';
 import {race} from 'rxjs';
-import {AuthSPAService} from '../../services/auth-spa.service';
+import {AuthSPAService} from '../../../services/auth-spa.service';
 
 @Component({
   selector: 'app-team-race',

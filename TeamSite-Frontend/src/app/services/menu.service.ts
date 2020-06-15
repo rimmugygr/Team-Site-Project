@@ -23,7 +23,7 @@ export class MenuService {
     // this.getTarget(target)?.insert(view);
     // view.detectChanges();
 
-    // in one line
+    // in one line above
    const view: EmbeddedViewRef<any> = this.getTarget(target)?.createEmbeddedView(template);
    view.checkNoChanges();
   }

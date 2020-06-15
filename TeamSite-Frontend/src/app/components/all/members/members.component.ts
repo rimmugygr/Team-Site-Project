@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {RunnerService} from '../../services/runner.service';
-import {IRunner} from '../IRunner';
+import {RunnerService} from '../../../services/runner.service';
+import {IRunner} from '../../../model/IRunner';
 
 @Component({
   selector: 'app-team-members',

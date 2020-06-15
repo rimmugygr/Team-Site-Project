@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {IPost} from '../IPost';
-import {PostService} from '../../services/post.service';
-import {Profile} from '../../services/profile';
+import {IPost} from '../../../model/IPost';
+import {PostService} from '../../../services/post.service';
+import {RunnerProfile} from '../../../model/runner-profile';
 
 @Component({
   selector: 'app-home',
