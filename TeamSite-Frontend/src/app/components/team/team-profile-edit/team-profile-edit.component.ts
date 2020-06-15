@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RunnerService} from '../../../services/runner.service';
-import {FormGroup, FormControl, Validators} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {AuthSPAService} from '../../../services/auth-spa.service';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginProfileService} from '../../../services/login-profile.service';
-import {IRunner} from '../../../model/IRunner';
+import {IProfile} from '../../../model/IProfile';
+import {IRunnerShow} from '../../../model/IRunnerShow';
 
 @Component({
   selector: 'app-team-new-member',
@@ -15,7 +14,7 @@ export class TeamProfileEditComponent implements OnInit {
   public gender: string[] = ['male', 'female'];
   public editProfileForm: FormGroup = null;
   public validMessage = '';
-  editRunnerProfile: IRunner;
+  editRunnerProfile: IProfile;
 
   constructor(private runnerService: RunnerService,
               private loginProfileService: LoginProfileService) { }
@@ -35,7 +34,7 @@ export class TeamProfileEditComponent implements OnInit {
       secondName: new FormControl(this.editRunnerProfile.secondName, Validators.pattern(`[a-z,A-Z]*`)),
       surname: new FormControl(this.editRunnerProfile.surname),
       birdDate: new FormControl(this.editRunnerProfile.birdDate, Validators.pattern(`(^[0-9]{2}-[0-9]{2}-[0-9]{4}$){0,1}`)),
-      description: new FormControl(this.editRunnerProfile.description),
+      description: new FormControl(this.editRunnerProfile.runnerShow.description),
       email: new FormControl(this.editRunnerProfile.email, Validators.pattern(`(^[a-z,A-Z,0-9]+@[a-z,A-Z,0-9,\.]+$){0,1}`)),
       gender: new FormControl()
     });
@@ -43,8 +42,16 @@ export class TeamProfileEditComponent implements OnInit {
 
   submitEditProfile() {
     if (this.editProfileForm.valid) {
-      this.validMessage = 'Added new member of team';
-      this.runnerService.editProfile(this.editProfileForm.value).subscribe(
+      const profileChange: IProfile = this.editProfileForm.value;
+      profileChange.runnerShow = {
+        id: this.editRunnerProfile.runnerShow.id,
+        description: this.editProfileForm.value.description,
+        surname: this.editProfileForm.value.surname,
+        firstName: this.editProfileForm.value.firstName,
+        secondName: this.editProfileForm.value.secondName,
+        picture: this.editProfileForm.value.picture
+      };
+      this.runnerService.editProfile(profileChange).subscribe(
         null ,
         error => {
           console.log(error);

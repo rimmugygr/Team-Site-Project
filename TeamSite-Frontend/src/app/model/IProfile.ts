@@ -3,7 +3,6 @@ import {IRunnerShow} from './IRunnerShow';
 
 export interface  IProfile extends IRunner{
   birdDate: any;
-  description: any;
   email: any;
   firstName: string;
   gender: any;

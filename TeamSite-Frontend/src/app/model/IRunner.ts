@@ -4,7 +4,6 @@ export interface IRunner {
   secondName;
   surname;
   birdDate;
-  description;
   email;
   gender;
   picture;
