@@ -1,0 +1,32 @@
+
+
+
+<div class="container" *ngIf="runner">
+  <div>
+    <table class="table table-bordered table-inverse">
+      <tr>
+        <th>{{runner.firstName+" "+runner.secondName}}</th>
+      </tr>
+      <tr>
+        <td><div [innerText]="runner.description"></div></td>
+      </tr>
+      <tr>
+        <td>
+          <div class="row">
+            <a class="btn btn=primary"  routerLink="/members">Back to List</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<ng-template appAttachTo="header">
+  <h1 *ngIf="runner">
+    {{runner.surname}} description
+  </h1>
+</ng-template>
+
+<ng-template appAttachTo="footer">
+  <h4>Footer Stuff team member</h4>
+</ng-template>

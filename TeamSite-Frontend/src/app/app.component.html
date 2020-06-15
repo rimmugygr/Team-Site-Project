@@ -1,0 +1,36 @@
+<div>
+  <div style="text-align: center">
+    <h1>
+      Team Site Header
+    </h1>
+  </div>
+
+
+
+  <div class="d-flex">
+    <app-sidebar></app-sidebar>
+
+    <div class="page-content-wrapper">
+      <app-navbar></app-navbar>
+
+      <div class="container-fluid">
+        <router-outlet></router-outlet>
+      </div>
+
+      <app-footer></app-footer>
+    </div>
+
+  </div>
+
+
+
+  <div style="text-align: center">
+    <h4>
+      Team Site Footer
+    </h4>
+    <header>
+      <button (click)="auth.login()" *ngIf="!auth.loggedIn">Log In</button>
+      <button (click)="auth.logout()">Log Out</button>
+    </header>
+  </div>
+</div>

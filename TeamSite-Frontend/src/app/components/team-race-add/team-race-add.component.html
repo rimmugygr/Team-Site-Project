@@ -1,0 +1,34 @@
+<div class="container">
+  <form [formGroup]="newRaceForm" (ngSubmit)="submitRegistration()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name" required autofocus/>
+    </div>
+    <div class="form-group">
+      <label>Localization</label>
+      <input type="text" class="form-control" formControlName="localization" required/>
+    </div>
+    <div class="form-group">
+      <label>Date</label>
+      <input type="text" class="form-control" formControlName="date" required/>
+    </div>
+    <div class="form-group">
+      <label>Distance</label>
+      <input type="text" class="form-control" formControlName="distance" required/>
+    </div>
+    <div class="form-group">
+      <label>Type</label>
+      <select class="form-control" formControlName="type" required>
+        <option value="">Please select type</option>
+        <option *ngFor="let t of raceType"
+                [value]="t">
+          {{t}}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+</div>
