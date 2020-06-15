@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { MembersComponent } from './components/all/members/members.component';
+import { MembersViewComponent } from './components/all/members-view/members-view.component';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import { TeamEditProfileComponent } from './components/team/team-edit-profile/team-edit-profile.component';
+import { TeamProfileEditComponent } from './components/team/team-profile-edit/team-profile-edit.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { TeamViewMemberComponent } from './components/team/team-view-member/team-view-member.component';
+import { MemberViewComponent } from './components/all/member-view/member-view.component';
 import { HomeComponent } from './components/all/home/home.component';
 import { WhenDirective } from './directive/when.directive';
 import { FooterComponent } from './layout/footer.component';
@@ -17,7 +17,7 @@ import { AddTargetDirective } from './directive/add-target.directive';
 import { PostViewComponent } from './components/all/post-view/post-view.component';
 import { CallbackComponent } from './components/team/callback/callback.component';
 import {TeamPostAddComponent} from './components/team/team-post-add/team-post-add.component';
-import {TeamHomeComponent} from './components/team/team-home/team-home.component';
+import {TeamProfileComponent} from './components/team/team-profile/team-profile.component';
 import { TeamRaceComponent } from './components/team/team-race/team-race.component';
 import { TeamRaceAddComponent } from './components/team/team-race-add/team-race-add.component';
 
@@ -25,9 +25,9 @@ import { TeamRaceAddComponent } from './components/team/team-race-add/team-race-
 @NgModule({
   declarations: [
     AppComponent,
-    MembersComponent,
-    TeamEditProfileComponent,
-    TeamViewMemberComponent,
+    MembersViewComponent,
+    TeamProfileEditComponent,
+    MemberViewComponent,
     HomeComponent,
     WhenDirective,
     FooterComponent,
@@ -38,7 +38,7 @@ import { TeamRaceAddComponent } from './components/team/team-race-add/team-race-
     PostViewComponent,
     CallbackComponent,
     TeamPostAddComponent,
-    TeamHomeComponent,
+    TeamProfileComponent,
     TeamRaceComponent,
     TeamRaceAddComponent
   ],

@@ -8,10 +8,10 @@ import {IRunner} from '../../../model/IRunner';
 
 @Component({
   selector: 'app-team-new-member',
-  templateUrl: './team-edit-profile.component.html',
-  styleUrls: ['./team-edit-profile.component.css']
+  templateUrl: './team-profile-edit.component.html',
+  styleUrls: ['./team-profile-edit.component.css']
 })
-export class TeamEditProfileComponent implements OnInit {
+export class TeamProfileEditComponent implements OnInit {
   public gender: string[] = ['male', 'female'];
   public editProfileForm: FormGroup = null;
   public validMessage = '';

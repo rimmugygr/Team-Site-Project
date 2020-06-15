@@ -16,6 +16,14 @@ export class RunnerService {
     return this.httpClient.get('/server/runner/' + id);
   }
 
+  getRunnersShow() {
+    return this.httpClient.get(`/server/runner/show`);
+  }
+
+  getRunnerShow(id: number | string) {
+    return this.httpClient.get(`/server/runner/show/` + id);
+  }
+
   createRunnerRegistration(runner) {
     return this.httpClient.post(
       '/server/runner',

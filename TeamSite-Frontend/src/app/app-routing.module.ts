@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MembersComponent} from './components/all/members/members.component';
-import {TeamViewMemberComponent} from './components/team/team-view-member/team-view-member.component';
+import {MembersViewComponent} from './components/all/members-view/members-view.component';
+import {MemberViewComponent} from './components/all/member-view/member-view.component';
 import {HomeComponent} from './components/all/home/home.component';
 import {PostViewComponent} from './components/all/post-view/post-view.component';
 import {CallbackComponent} from './components/team/callback/callback.component';
-import {TeamHomeComponent} from './components/team/team-home/team-home.component';
+import {TeamProfileComponent} from './components/team/team-profile/team-profile.component';
 import {AuthGuard} from './services/auth.guard';
 import {TeamPostAddComponent} from './components/team/team-post-add/team-post-add.component';
 import {TeamRaceComponent} from './components/team/team-race/team-race.component';
 import {TeamRaceAddComponent} from './components/team/team-race-add/team-race-add.component';
-import {TeamEditProfileComponent} from './components/team/team-edit-profile/team-edit-profile.component';
+import {TeamProfileEditComponent} from './components/team/team-profile-edit/team-profile-edit.component';
 
 const routes: Routes = [
   {
@@ -23,7 +23,7 @@ const routes: Routes = [
   },
   {
     path: 'team',
-    component: TeamHomeComponent,
+    component: TeamProfileComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -32,15 +32,15 @@ const routes: Routes = [
   },
   {
     path: 'members/new',
-    component: TeamEditProfileComponent
+    component: TeamProfileEditComponent
   },
   {
     path: 'members/view/:id',
-    component: TeamViewMemberComponent
+    component: MemberViewComponent
   },
   {
     path: 'members',
-    component: MembersComponent
+    component: MembersViewComponent
   },
   {
     path: 'posts',

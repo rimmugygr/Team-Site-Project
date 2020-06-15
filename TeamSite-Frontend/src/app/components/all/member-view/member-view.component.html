@@ -1,14 +1,16 @@
 
 
 
-<div class="container" *ngIf="runner">
+<div class="container" *ngIf="runnerShow">
   <div>
     <table class="table table-bordered table-inverse">
       <tr>
-        <th>{{runner.firstName+" "+runner.secondName}}</th>
+        <th>
+          <img src="{{runnerShow.picture}}"/>
+          {{" " + runnerShow.firstName+" "+runnerShow.secondName}}</th>
       </tr>
       <tr>
-        <td><div [innerText]="runner.description"></div></td>
+        <td><div [innerText]="runnerShow.description"></div></td>
       </tr>
       <tr>
         <td>
@@ -22,9 +24,9 @@
 </div>
 
 <ng-template appAttachTo="header">
-  <h1 *ngIf="runner">
-    {{runner.surname}} description
-  </h1>
+  <p *ngIf="runnerShow">
+    {{runnerShow.surname}} description
+  </p>
 </ng-template>
 
 <ng-template appAttachTo="footer">

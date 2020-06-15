@@ -6,10 +6,10 @@ import {IRunner} from '../../../model/IRunner';
 
 @Component({
   selector: 'app-team-home',
-  templateUrl: './team-home.component.html',
-  styleUrls: ['./team-home.component.css']
+  templateUrl: './team-profile.component.html',
+  styleUrls: ['./team-profile.component.css']
 })
-export class TeamHomeComponent implements OnInit {
+export class TeamProfileComponent implements OnInit {
   profile: IRunner;
   constructor(private runnerService: RunnerService, public loginProfile: LoginProfileService) { }
 

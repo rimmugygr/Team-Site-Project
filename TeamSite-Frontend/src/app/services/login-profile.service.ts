@@ -3,14 +3,14 @@ import {IRunner} from '../model/IRunner';
 import {AuthSPAService} from './auth-spa.service';
 import {RunnerService} from './runner.service';
 import {Observable, Subscription} from 'rxjs';
-import {RunnerProfile} from '../model/runner-profile';
+import {IProfile} from '../model/IProfile';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginProfileService {
   profileInit = false;
-  profile = new RunnerProfile();
+  profile: IProfile ;
 
   constructor(private auth: AuthSPAService, private runnerService: RunnerService) { }
 
@@ -33,7 +33,7 @@ export class LoginProfileService {
         profileId = data.sub.replace(`facebook|`, '');
         this.runnerService.getRunner(profileId).subscribe(
           data => {
-            this.profile = (data as RunnerProfile);
+            this.profile = (data as IProfile);
           },
           error => console.error(error),
           () => {

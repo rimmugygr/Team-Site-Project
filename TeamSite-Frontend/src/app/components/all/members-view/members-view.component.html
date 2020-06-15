@@ -1,0 +1,33 @@
+<div>
+  <table>
+    <tr>
+      <td>First name:</td>
+      <td>Second name:</td>
+      <td>Surname:</td>
+    </tr>
+    <div *ngFor="let runner of runnersShow">
+      <tr>
+        <th>
+          <img src="{{runner.picture}}"/>
+        </th>
+        <th>
+          <a [routerLink]="['view/', runner.id]">{{runner.firstName}}</a>
+        </th>
+        <th>
+          <a [routerLink]="['view/', runner.id]">{{runner.secondName}}</a>
+        </th>
+        <th>
+          <a [routerLink]="['view/', runner.id]">{{runner.surname}}</a>
+        </th>
+      </tr>
+    </div>
+  </table>
+</div>
+
+<ng-template appAttachTo="header">
+
+</ng-template>
+
+<ng-template appAttachTo="footer">
+  <h4>Footer Stuff team members</h4>
+</ng-template>
