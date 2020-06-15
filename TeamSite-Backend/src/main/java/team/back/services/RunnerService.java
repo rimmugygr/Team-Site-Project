@@ -59,21 +59,53 @@ public class RunnerService {
     public void updateRunner(Runner runner) {
         if(runnerRepo.existsById(runner.getId())){
             Runner runnerInBase = runnerRepo.getOne(runner.getId());
-            if (runner.getFirstName()!=null && !runner.getFirstName().equals("")) {
+            if (isNotEmptyString(runner.getFirstName())) {
                 runnerInBase.setFirstName(runner.getFirstName());
             }
-            if (runner.getSecondName()!=null && !runner.getSecondName().equals("")) {
+            if (isNotEmptyString(runner.getSecondName())) {
                 runnerInBase.setSecondName(runner.getSecondName());
             }
-            if (runner.getSurname()!=null && !runner.getSurname().equals("")) {
+            if (isNotEmptyString(runner.getSurname())) {
                 runnerInBase.setSurname(runner.getSurname());
+            }
+            if (isNotEmptyString(runner.getPicture())) {
+                runnerInBase.setPicture(runner.getPicture());
             }
             if (runner.getBirdDate()!=null) {
                 runnerInBase.setBirdDate(runner.getBirdDate());
+            }
+            if (runner.getRunnerShow()!=null) {
+                updateRunnerShow(runner.getRunnerShow());
             }
             runnerRepo.save(runnerInBase);
         } else {
             addNewRunner(runner);
         }
     }
+
+    private void updateRunnerShow(RunnerShow runnerShow) {
+        RunnerShow runnerShowInBase = runnerShowRepo.getOne(runnerShow.getId());
+        if (isNotEmptyString(runnerShow.getFirstName())) {
+            runnerShowInBase.setFirstName(runnerShow.getFirstName());
+        }
+        if (isNotEmptyString(runnerShow.getSecondName())) {
+            runnerShowInBase.setSecondName(runnerShow.getSecondName());
+        }
+        if (isNotEmptyString(runnerShow.getSurname())) {
+            runnerShowInBase.setSurname(runnerShow.getSurname());
+        }
+        if (isNotEmptyString(runnerShow.getPicture())) {
+            runnerShowInBase.setPicture(runnerShow.getPicture());
+        }
+        if (isNotEmptyString(runnerShow.getDescription())) {
+            runnerShowInBase.setDescription(runnerShow.getDescription());
+        }
+        runnerShowRepo.save(runnerShowInBase);
+
+    }
+
+    private boolean isNotEmptyString(String secondName) {
+        return secondName != null && !secondName.equals("");
+    }
+
 }
