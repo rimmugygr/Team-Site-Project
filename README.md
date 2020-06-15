@@ -1,3 +1,3 @@
 # TeamSite
-Project Team Site on Angular and Spring Boot 
+# Project Team Site on Angular and Spring Boot 
 Rest OAuth JPA
