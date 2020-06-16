@@ -2,9 +2,7 @@ package team.back.models;
 
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 
@@ -18,21 +16,13 @@ public class RaceStart {
     private String description;
     @ManyToOne
     @JoinColumn(name="runner_id")
-    @JsonIgnore
+    @JsonUnwrapped(suffix = "Runner")
+    @JsonIgnoreProperties( {"firstName","secondName","picture","birdDate","runnerShow"})
     private Runner runner;
-    private Long runnerIdStart;
     @ManyToOne
     @JoinColumn(name="race_id")
     @JsonBackReference
     private Race race;
-
-    public Long getRunnerIdStart() {
-        return runnerIdStart;
-    }
-
-    public void setRunnerIdStart(Long runnerIdStart) {
-        this.runnerIdStart = runnerIdStart;
-    }
 
     public Long getId() {
         return id;
@@ -57,6 +47,7 @@ public class RaceStart {
     public void setDescription(String description) {
         this.description = description;
     }
+
 
     public Runner getRunner() {
         return runner;

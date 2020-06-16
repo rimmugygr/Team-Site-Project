@@ -3,8 +3,6 @@ import {RunnerService} from '../../../services/runner.service';
 import {IRunner} from '../../../model/IRunner';
 import {RaceService} from '../../../services/race.service';
 import {IRace} from '../../../model/IRace';
-import {IStart} from '../../../model/IStart';
-import {race} from 'rxjs';
 import {AuthSPAService} from '../../../services/auth/auth-spa.service';
 
 @Component({
@@ -40,13 +38,5 @@ export class RaceComponent implements OnInit {
       err => console.error(err),
       () => console.log('races loaded')
     );
-  }
-  setSurname() {
-    for (let race of this.races)
-    {
-      for (let raceStart of race.raceStarts) {
-        raceStart.runnerSurname = this.runners.find(runner => runner.id === raceStart.runnerIdStart).surname;
-      }
-    }
   }
 }

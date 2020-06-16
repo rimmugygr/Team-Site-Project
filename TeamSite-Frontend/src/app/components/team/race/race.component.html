@@ -18,15 +18,26 @@
         {{race.distance}}
       </th>
       <th *ngFor="let start of race.raceStarts">
-        {{start.runnerSurname}}<br>
+        {{start.surnameRunner}}<br>
         {{start.description}}
       </th>
+<!--      <th *ngIf="auth.loggedIn">-->
+<!--        <div *ngIf="this.enableFormPhone=='none'">-->
+<!--          <button (click)="this.createFormNewPhone(person.id)" >Add</button>-->
+<!--        </div>-->
+
+<!--        <form [formGroup]="this.raceStartNewForm" (ngSubmit)="submitFormNewRaceStart()" novalidate *ngIf="race.raceStarts.indexOf({})==-1">-->
+<!--            <input type="text" formControlName="status" size="12" required/>-->
+<!--            <input type="text" formControlName="description" size="12" required/>-->
+<!--          <button type="submit">Send</button>-->
+<!--          <button (click)="disableFormPhone()">Cancel</button>-->
+<!--        </form>-->
+
+<!--      </th>-->
     </tr>
   </table>
 </div>
 
-<!--when load all content-->
-{{runners&&races?setSurname():""}}
 
 <ng-template appAttachTo="header" *ngIf="auth.loggedIn">
   <h1 style="text-align: left">

@@ -101,3 +101,5 @@ GET http://localhost:8080/runner/show/1
 GET http://localhost:8080/runner/show
 ###
 GET http://localhost:8080/runner
+###
+GET http://localhost:8080/race/start/1

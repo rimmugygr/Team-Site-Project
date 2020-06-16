@@ -31,7 +31,6 @@ public class RaceService {
 
     public void addStart(RaceStart raceStart,Long runnerId , Long raceId){
         raceStart.setRunner(runnerService.getRunner(runnerId));
-        raceStart.setRunnerIdStart(runnerId);
         raceStart.setRace(this.getRace(raceId));
         raceStartRepo.save(raceStart);
     }
