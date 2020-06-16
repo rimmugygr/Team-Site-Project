@@ -5,14 +5,14 @@ import {RaceService} from '../../../services/race.service';
 import {IRace} from '../../../model/IRace';
 import {IStart} from '../../../model/IStart';
 import {race} from 'rxjs';
-import {AuthSPAService} from '../../../services/auth-spa.service';
+import {AuthSPAService} from '../../../services/auth/auth-spa.service';
 
 @Component({
   selector: 'app-team-race',
-  templateUrl: './team-race.component.html',
-  styleUrls: ['./team-race.component.css']
+  templateUrl: './race.component.html',
+  styleUrls: ['./race.component.css']
 })
-export class TeamRaceComponent implements OnInit {
+export class RaceComponent implements OnInit {
   public runners: IRunner[];
   public races: IRace[];
 

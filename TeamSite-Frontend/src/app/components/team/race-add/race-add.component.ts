@@ -5,10 +5,10 @@ import {RaceService} from '../../../services/race.service';
 
 @Component({
   selector: 'app-team-race-add',
-  templateUrl: './team-race-add.component.html',
-  styleUrls: ['./team-race-add.component.css']
+  templateUrl: './race-add.component.html',
+  styleUrls: ['./race-add.component.css']
 })
-export class TeamRaceAddComponent implements OnInit {
+export class RaceAddComponent implements OnInit {
   raceType: string[] = ['asphalt', 'OCR', 'trial', 'mountain', 'survival'];
   newRaceForm: FormGroup;
   validMessage = '';

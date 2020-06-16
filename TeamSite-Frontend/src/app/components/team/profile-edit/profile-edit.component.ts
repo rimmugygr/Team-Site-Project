@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {RunnerService} from '../../../services/runner.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {LoginProfileService} from '../../../services/login-profile.service';
+import {LoginProfileService} from '../../../services/auth/login-profile.service';
 import {IProfile} from '../../../model/IProfile';
 import {IRunnerShow} from '../../../model/IRunnerShow';
 
 @Component({
   selector: 'app-team-new-member',
-  templateUrl: './team-profile-edit.component.html',
-  styleUrls: ['./team-profile-edit.component.css']
+  templateUrl: './profile-edit.component.html',
+  styleUrls: ['./profile-edit.component.css']
 })
-export class TeamProfileEditComponent implements OnInit {
+export class ProfileEditComponent implements OnInit {
   public gender: string[] = ['male', 'female'];
   public editProfileForm: FormGroup = null;
   public validMessage = '';

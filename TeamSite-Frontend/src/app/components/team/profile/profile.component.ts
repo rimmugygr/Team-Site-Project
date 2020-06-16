@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthSPAService} from '../../../services/auth-spa.service';
+import {AuthSPAService} from '../../../services/auth/auth-spa.service';
 import {RunnerService} from '../../../services/runner.service';
-import {LoginProfileService} from '../../../services/login-profile.service';
+import {LoginProfileService} from '../../../services/auth/login-profile.service';
 import {IRunner} from '../../../model/IRunner';
 
 @Component({
   selector: 'app-team-home',
-  templateUrl: './team-profile.component.html',
-  styleUrls: ['./team-profile.component.css']
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.css']
 })
-export class TeamProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   profile: IRunner;
   constructor(private runnerService: RunnerService, public loginProfile: LoginProfileService) { }
 

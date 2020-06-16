@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {IRunner} from '../model/IRunner';
+import {IRunner} from '../../model/IRunner';
 import {AuthSPAService} from './auth-spa.service';
-import {RunnerService} from './runner.service';
+import {RunnerService} from '../runner.service';
 import {Observable, Subscription} from 'rxjs';
-import {IProfile} from '../model/IProfile';
+import {IProfile} from '../../model/IProfile';
 
 @Injectable({
   providedIn: 'root'

@@ -5,34 +5,34 @@ import {MemberViewComponent} from './components/all/member-view/member-view.comp
 import {HomeComponent} from './components/all/home/home.component';
 import {PostViewComponent} from './components/all/post-view/post-view.component';
 import {CallbackComponent} from './components/team/callback/callback.component';
-import {TeamProfileComponent} from './components/team/team-profile/team-profile.component';
-import {AuthGuard} from './services/auth.guard';
-import {TeamPostAddComponent} from './components/team/team-post-add/team-post-add.component';
-import {TeamRaceComponent} from './components/team/team-race/team-race.component';
-import {TeamRaceAddComponent} from './components/team/team-race-add/team-race-add.component';
-import {TeamProfileEditComponent} from './components/team/team-profile-edit/team-profile-edit.component';
+import {ProfileComponent} from './components/team/profile/profile.component';
+import {AuthGuard} from './services/auth/auth.guard';
+import {PostAddComponent} from './components/team/post-add/post-add.component';
+import {RaceComponent} from './components/team/race/race.component';
+import {RaceAddComponent} from './components/team/race-add/race-add.component';
+import {ProfileEditComponent} from './components/team/profile-edit/profile-edit.component';
 
 const routes: Routes = [
   {
     path: 'races/new',
-    component: TeamRaceAddComponent
+    component: RaceAddComponent
   },
   {
     path: 'races',
-    component: TeamRaceComponent
+    component: RaceComponent
   },
   {
     path: 'team',
-    component: TeamProfileComponent,
+    component: ProfileComponent,
     canActivate: [AuthGuard]
   },
   {
     path: 'posts/new',
-    component: TeamPostAddComponent
+    component: PostAddComponent
   },
   {
     path: 'members/new',
-    component: TeamProfileEditComponent
+    component: ProfileEditComponent
   },
   {
     path: 'members/view/:id',

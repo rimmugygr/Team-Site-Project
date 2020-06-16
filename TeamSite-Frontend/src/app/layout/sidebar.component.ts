@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthSPAService} from '../services/auth-spa.service';
+import {AuthSPAService} from '../services/auth/auth-spa.service';
 
 @Component({
   selector: 'app-sidebar',

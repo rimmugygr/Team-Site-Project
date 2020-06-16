@@ -6,10 +6,10 @@ import {Router, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-team-post-add',
-  templateUrl: './team-post-add.component.html',
-  styleUrls: ['./team-post-add.component.css']
+  templateUrl: './post-add.component.html',
+  styleUrls: ['./post-add.component.css']
 })
-export class TeamPostAddComponent implements OnInit {
+export class PostAddComponent implements OnInit {
   postForm: FormGroup;
   validMessage = '';
 
