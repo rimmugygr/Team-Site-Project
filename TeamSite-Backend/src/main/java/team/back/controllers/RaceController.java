@@ -52,4 +52,10 @@ public class RaceController {
     public void addRaceStart(@RequestBody RaceStart raceStart, @PathVariable Long runnerId, @PathVariable Long raceId) {
         raceService.addStart(raceStart, runnerId, raceId);
     }
+
+    @PatchMapping("/start/{runnerId}/{raceId}")
+    @ResponseStatus(HttpStatus.OK)
+    public void editRaceStart(@RequestBody RaceStart raceStart, @PathVariable Long runnerId, @PathVariable Long raceId) {
+        raceService.editStart(raceStart, runnerId, raceId);
+    }
 }

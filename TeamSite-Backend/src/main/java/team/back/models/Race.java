@@ -25,6 +25,13 @@ public class Race {
     @JsonManagedReference
     private List<RaceStart> raceStarts;
 
+    public Race() {
+    }
+
+    public Race(Long id) {
+        this.id = id;
+    }
+
     public String getDistance() {
         return distance;
     }

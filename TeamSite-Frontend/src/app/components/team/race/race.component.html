@@ -19,21 +19,34 @@
       </th>
       <th *ngFor="let start of race.raceStarts">
         {{start.surnameRunner}}<br>
+        {{start.status}}<br>
         {{start.description}}
       </th>
-<!--      <th *ngIf="auth.loggedIn">-->
-<!--        <div *ngIf="this.enableFormPhone=='none'">-->
-<!--          <button (click)="this.createFormNewPhone(person.id)" >Add</button>-->
-<!--        </div>-->
+      <th *ngIf="auth.loggedIn">
+        <div *ngIf="this.isUserInRace(race)">
+          <button (click)="this.createFormStart(race.id)" >Add</button>
+        </div>
+        <div *ngIf="!this.isUserInRace(race)">
+          <button (click)="this.createFormStart(race.id)" >Edit</button>
+        </div>
 
-<!--        <form [formGroup]="this.raceStartNewForm" (ngSubmit)="submitFormNewRaceStart()" novalidate *ngIf="race.raceStarts.indexOf({})==-1">-->
-<!--            <input type="text" formControlName="status" size="12" required/>-->
-<!--            <input type="text" formControlName="description" size="12" required/>-->
-<!--          <button type="submit">Send</button>-->
-<!--          <button (click)="disableFormPhone()">Cancel</button>-->
-<!--        </form>-->
+        <form [formGroup]="this.raceStartForm" (ngSubmit)="submitFormRaceStart(race.id)" novalidate *ngIf="race.id==this.enableForm">
+          <label>
+            <select class="form-control" formControlName="status" >
+              <option value="Undefined" disabled selected>Please select status</option>
+              <option *ngFor="let s of this.statusEnum" [value]="s">
+                {{s}}
+              </option>
+            </select>
+          </label>
+          <label>
+            <input type="text" formControlName="description" size="12" />
+          </label>
+          <button type="submit">Send</button>
+          <button (click)="disableForm()">Cancel</button>
+        </form>
 
-<!--      </th>-->
+      </th>
     </tr>
   </table>
 </div>

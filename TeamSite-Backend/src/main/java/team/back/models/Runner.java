@@ -27,6 +27,10 @@ public class Runner {
     public Runner() {
     }
 
+    public Runner(Long id) {
+        this.id = id;
+    }
+
     public String getPicture() {
         return picture;
     }

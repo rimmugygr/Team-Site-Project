@@ -96,10 +96,19 @@ Content-Type: application/json
 }
 
 ###
+PATCH http://localhost:8080/race/start/1/2
+Content-Type: application/json
+
+{
+"status":"Interested","description":"Open Open Open Open"
+}
+
+
+###
 GET http://localhost:8080/runner/show/1
 ###
 GET http://localhost:8080/runner/show
 ###
 GET http://localhost:8080/runner
 ###
-GET http://localhost:8080/race/start/1
+GET http://localhost:8080/race/start

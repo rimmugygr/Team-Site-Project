@@ -30,9 +30,13 @@ public class RaceService {
     }
 
     public void addStart(RaceStart raceStart,Long runnerId , Long raceId){
-        raceStart.setRunner(runnerService.getRunner(runnerId));
-        raceStart.setRace(this.getRace(raceId));
-        raceStartRepo.save(raceStart);
+        if (raceStartRepo.existsByRaceAndRunner(new Race(raceId), new Runner(runnerId))) {
+            editStart(raceStart,runnerId,raceId);
+        } else {
+            raceStart.setRunner(runnerService.getRunner(runnerId));
+            raceStart.setRace(this.getRace(raceId));
+            raceStartRepo.save(raceStart);
+        }
     }
 
     public List<Race> getRaces(){
@@ -47,4 +51,10 @@ public class RaceService {
         raceRepo.save(race);
     }
 
+    public void editStart(RaceStart raceStartUpdate, Long runnerId, Long raceId) {
+        RaceStart raceStartDB = raceStartRepo.getRaceStartByRaceAndRunner(new Race(raceId), new Runner(runnerId));
+        raceStartDB.setStatus(raceStartUpdate.getStatus());
+        raceStartDB.setDescription(raceStartUpdate.getDescription());
+        raceStartRepo.save(raceStartDB);
+    }
 }
