@@ -11,6 +11,8 @@ import {PostAddComponent} from './components/team/post-add/post-add.component';
 import {RaceComponent} from './components/team/race/race.component';
 import {RaceAddComponent} from './components/team/race-add/race-add.component';
 import {ProfileEditComponent} from './components/team/profile-edit/profile-edit.component';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {InterceptorService} from './services/auth/interceptor.service';
 
 const routes: Routes = [
   {
@@ -59,13 +61,13 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
-  // ,
-  // providers: [
-    // {
-    //   provide: HTTP_INTERCEPTORS,
-    //   useClass: InterceptorService,
-    //   multi: true
-    // }
-  // ]
+  ,
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ]
 })
 export class AppRoutingModule { }
