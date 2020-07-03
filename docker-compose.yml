@@ -34,4 +34,13 @@ services:
     ports:
     - 8080:8080
 
+  client:
+    build: ./TeamSite-Frontend
+    container_name: dev_client
+    links:
+      - api
+#    restart: always
+    ports:
+      - 4200:80
+
 # docker-compose up --force-recreate
