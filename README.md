@@ -1,13 +1,13 @@
 # TeamSite
 # Project Team Site on Angular and Spring Boot 
 
-Rest OAuth JPA
-Clinent: Angular 9
-Rest Api: Spring Boot 2 
-JPA: Hibernate
-Data Base: H2
-Security: OAuth
-Authentycation: https://teamsite.eu.auth0.com/
+Use technologies
+- Clinent: Angular 9
+- Rest Api: Spring Boot 2
+- JPA: Hibernate
+- Data Base: H2
+- Security: OAuth
+- Authentycation: https://teamsite.eu.auth0.com/
 
 This is site to manage sports team memebers and to present team 
 
@@ -18,9 +18,10 @@ Description functionality:
 - posts about team to (adds only memeber, view all)
 
 Project is not finished.
-TODO: Unit tests.
-TODO: Client layout.
-TODO: "Admin client" to administration users on authentycation server.
+DOTO:
+- Unit tests.
+- Client layout.
+- "Admin client" to administration users on authentycation server.
 
 
 
