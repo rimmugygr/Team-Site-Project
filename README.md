@@ -9,6 +9,8 @@ Use technologies
 - Security: OAuth
 - Authentycation server: https://teamsite.eu.auth0.com/
 
+Project has dockerfile.
+
 This is site to manage sports team memebers and to present team 
 
 Description functionality:
@@ -17,7 +19,7 @@ Description functionality:
 - presentation team member (adds only memeber, view all)
 - posts about team to (adds only memeber, view all)
 
-Project is not finished.
+Project is working, but not fully finish
 DOTO:
 - Unit tests.
 - Client layout.
