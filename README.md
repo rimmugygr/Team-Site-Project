@@ -7,7 +7,7 @@ Use technologies
 - JPA: Hibernate
 - Data Base: H2
 - Security: OAuth
-- Authentycation: https://teamsite.eu.auth0.com/
+- Authentycation server: https://teamsite.eu.auth0.com/
 
 This is site to manage sports team memebers and to present team 
 
