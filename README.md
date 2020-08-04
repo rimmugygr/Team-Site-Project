@@ -20,6 +20,7 @@ Description functionality:
 - posts about team to (adds only memeber, view all)
 
 Project is working, but not fully finish.
+
 DOTO:
 - Unit tests.
 - Client layout.
