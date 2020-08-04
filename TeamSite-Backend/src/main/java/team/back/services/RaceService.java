@@ -1,5 +1,6 @@
 package team.back.services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import team.back.models.Race;
 import team.back.models.RaceStart;
@@ -9,17 +10,12 @@ import team.back.repositores.RaceStartRepo;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class RaceService {
     RunnerService runnerService;
     RaceStartRepo raceStartRepo;
     RaceRepo raceRepo;
-
-    public RaceService(RunnerService runnerService, RaceStartRepo raceStartRepo, RaceRepo raceRepo) {
-        this.runnerService = runnerService;
-        this.raceStartRepo = raceStartRepo;
-        this.raceRepo = raceRepo;
-    }
 
     public List<RaceStart> getStarts(){
         return raceStartRepo.findAll();

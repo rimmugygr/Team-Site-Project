@@ -3,12 +3,16 @@ package team.back.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Calendar;
 import java.util.Date;
 
+@Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties({"handler","hibernateLazyInitializer"})
 public class Post {
     @Id
@@ -24,53 +28,5 @@ public class Post {
     @ManyToOne(targetEntity = Runner.class, fetch = FetchType.LAZY)
     private Runner runner;
     private String author;
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public Runner getRunner() {
-        return runner;
-    }
-
-    public void setRunner(Runner runner) {
-        this.runner = runner;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
 }

@@ -1,5 +1,6 @@
 package team.back.services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import team.back.models.Runner;
@@ -9,15 +10,12 @@ import team.back.repositores.RunnerShowRepo;
 
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class RunnerService {
     RunnerRepo runnerRepo;
     RunnerShowRepo runnerShowRepo;
 
-    public RunnerService(RunnerRepo runnerRepo, RunnerShowRepo runnerShowRepo) {
-        this.runnerRepo = runnerRepo;
-        this.runnerShowRepo = runnerShowRepo;
-    }
 
     public void addNewRunner(Runner runner) {
         RunnerShow runnerShow = new RunnerShow();

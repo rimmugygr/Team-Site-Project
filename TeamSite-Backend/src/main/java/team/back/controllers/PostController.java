@@ -1,35 +1,27 @@
 package team.back.controllers;
 
-import org.springframework.data.domain.Sort;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import team.back.models.Post;
-import team.back.models.Runner;
-import team.back.repositores.PostRepo;
-import team.back.repositores.RunnerRepo;
 import team.back.services.PostService;
-
-import javax.persistence.PrePersist;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
+@AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/post")
 public class PostController {
     PostService postService;
 
-    public PostController(PostService postService) {
-        this.postService = postService;
-    }
-
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<Post> list(){
         return postService.getPosts();
     }
 
     @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
     public Post get(@PathVariable("id") long id){
         return postService.getPost(id);
     }

@@ -1,5 +1,6 @@
 package team.back.services;
 
+import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,15 +11,11 @@ import team.back.repositores.PostRepo;
 import java.util.Date;
 import java.util.List;
 
+@AllArgsConstructor
 @Service
 public class PostService {
     PostRepo postRepo;
     RunnerService runnerService;
-
-    public PostService(PostRepo postRepo, RunnerService runnerService) {
-        this.postRepo = postRepo;
-        this.runnerService = runnerService;
-    }
 
     public List<Post> getPosts() {
         return postRepo.findAll(Sort.by(Sort.Direction.ASC, "date"));

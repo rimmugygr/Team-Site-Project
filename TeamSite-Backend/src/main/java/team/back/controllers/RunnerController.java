@@ -1,5 +1,6 @@
 package team.back.controllers;
 
+import lombok.AllArgsConstructor;
 import team.back.models.Runner;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -8,15 +9,12 @@ import team.back.services.RunnerService;
 
 import java.util.List;
 
+@AllArgsConstructor
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/runner")
 public class RunnerController {
     RunnerService runnerService;
-
-    public RunnerController(RunnerService runnerService) {
-        this.runnerService = runnerService;
-    }
 
     @GetMapping
     public List<Runner> list(){

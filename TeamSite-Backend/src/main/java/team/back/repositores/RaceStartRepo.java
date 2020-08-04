@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import team.back.models.Race;
 import team.back.models.RaceStart;
 import team.back.models.Runner;
-
 import java.util.List;
 
 
