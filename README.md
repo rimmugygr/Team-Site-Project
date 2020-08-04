@@ -24,6 +24,6 @@ DOTO:
 - Unit tests.
 - Client layout.
 - "Admin client" to administration users on authentycation server.
-
+- In api add separate layer for dto
 
 
