@@ -3,12 +3,14 @@ package team.back.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
+@EqualsAndHashCode
+@Builder
 @Data
 @Entity
 @NoArgsConstructor
@@ -21,9 +23,8 @@ public class Post {
     private String title;
     @Lob
     private String description;
-    @Temporal(TemporalType.TIMESTAMP)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-    private Date date;
+    private LocalDate date;
     @JsonIgnore
     @ManyToOne(targetEntity = Runner.class, fetch = FetchType.LAZY)
     private Runner runner;

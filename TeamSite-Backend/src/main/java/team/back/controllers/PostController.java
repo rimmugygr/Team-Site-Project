@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/post")
 public class PostController {
-    PostService postService;
+    private final PostService postService;
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -26,15 +26,14 @@ public class PostController {
         return postService.getPost(id);
     }
 
-
     @PostMapping
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody Post post){
         postService.addPost(post);
     }
 
-    @PostMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
+    @PostMapping("/runner/{id}")
+    @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody Post post, @PathVariable("id") long id){
         postService.addPost(post, id);
     }
