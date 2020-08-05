@@ -19,11 +19,12 @@ Description functionality:
 - presentation team member (adds only memeber, view all)
 - posts about team to (adds only memeber, view all)
 
-Project is working, but not fully finish
+Project is working, but not fully finish.
+
 DOTO:
 - Unit tests.
 - Client layout.
 - "Admin client" to administration users on authentycation server.
-
+- In api add separate layer for dto
 
 
