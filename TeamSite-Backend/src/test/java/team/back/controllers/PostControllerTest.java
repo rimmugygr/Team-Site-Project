@@ -152,7 +152,7 @@ class PostControllerTest {
 
     @DisplayName("when POST /post/runner/{id}")
     @Nested
-    class postPostWithRunnerTest{
+    class PostPostWithRunnerTest{
         @BeforeEach
         void initEach() throws Exception {
             //given

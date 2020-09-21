@@ -1,6 +1,7 @@
 {
 	"/server": {
     "": "http://api:8080 this for docker",
+    "": "http://localhost:8080 this for no docker",
 		"target": "http://localhost:8080",
   	"secure": false,
     "changeOrigin": true,
